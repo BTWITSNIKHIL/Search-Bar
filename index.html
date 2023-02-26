@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+  background-color:#116466;
+  
+  
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-color: white;
+  
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  
+  
+  
+  font-size: 18px;
+  padding: 12px 20px 12px 40px;
+  border: 3px solid #ddd;
+  margin-bottom: 7px;
+  
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 5px;
+  padding-left: 35px;
+  padding-right: 35px;
+  
+  
+  
+  margin: 0;
+}
+
+#myUL li a {
+ 
+  border: 3px solid black;
+  column-count: 6;
+  
+  
+  border-radius: 15px;
+  
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+ 
+  float: left;
+  height:210px;
+  width: 50%;
+  min-block-size: 250px;
+  margin-block-start: 10px;
+  
+  
+
+  text-align: center;;
+  text-decoration: none;
+  font-size: 18px;
+  
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: skyblue;
+}
+
+
+</style>
+</head>
+<body>
+
+
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Enter city name" title="Type in a name">
+
+<ul id="myUL">
+  <li><a  style="background-image: url('img19.jpg');"href="jaipur.html">Jaipur</a></li>
+  <li><a style="background-image: url('img20.jpg');" href="mumbai.html">Mumbai</a></li>
+
+  <li><a style="background-image: url('img21.jpg');"href="newdelhi.html">New Delhi</a></li>
+  <li><a style="background-image: url('img22.jpg');" href="Surat.html">Surat</a></li>
+
+  <li><a style="background-image: url('img23.jpg');"href="Kolkata.html">Kolkata</a></li>
+  
+  <li><a style="background-image: url('img24.jpg');" href="udaipur.html">Udaipur</a></li>
+</ul>
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+</body>
+</html>
